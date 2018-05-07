@@ -1,0 +1,12 @@
+#!/bin/bash
+
+alias gcp='git cherry-pick'
+alias xdb='export XDEBUG_CONFIG="profiler_enable=1"'
+alias xdb_off='export XDEBUG_CONFIG="profiler_enable=0"'
+alias xhp='export XHPROF_CONFIG="profiler_enable=1"'
+alias xhp_off='export XHPROF_CONFIG="profiler_enable=0"'
+alias simpletest='php scripts/run-tests.sh --php /usr/local/bin/php'
+alias git=git-org.sh
+
+alias dockertop="docker stats \$(docker ps --format '{{ .Names }}')"
+alias fork="/Applications/Fork.app/Contents/MacOS/Fork"

@@ -1,0 +1,113 @@
+[user]
+	name = Thomas Gielfeldt
+	email = thomas@gielfeldt.dk
+
+[push]
+	default = simple
+
+[url "ssh://git@github.com/"]
+    insteadOf = "github:"
+
+[url "ssh://git@github.com/blackwoodseven/"]
+    insteadOf = "bw7:"
+
+[url "ssh://git@git.drupal.org/project/"]
+    insteadOf = "drupal:"
+
+[url "ssh://git@git.drupal.org/sandbox/"]
+    insteadOf = "drupalsand:"
+
+[organization "git@github.com:blackwoodseven"]
+  email = tg@blackwoodseven.com
+
+[organization "git@github.com:gielfeldt"]
+  email = thomas@gielfeldt.dk
+
+[organization "git@github.com:reload"]
+  email = gielfeldt@reload.dk
+
+[color]
+	ui = true
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = cyan bold
+  frag = yellow
+  old = red
+  new = green
+
+[color "status"]
+  added = green
+  changed = red
+  untracked = cyan
+
+[core]
+  whitespace = fix,-indent-with-non-tab,-indent-with-tab,trailing-space,cr-at-eol
+  editor = subl
+	excludesfile = /Users/thomas/.gitignore_global
+
+[branch]
+  autosetuprebase = always
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  dfs = diff --cached
+  w = whatchanged
+  ;flow = reflow
+
+  lg0 = log --graph --decorate --pretty=oneline --abbrev-commit
+
+  lg1 = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+  lg2 = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(blue)%h%C(reset) - %C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset) %C(green)(%m:right%ar)%C(reset)' --all
+
+  lg3 = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(blue)%h%C(reset) - %C(bold yellow)%d%C(reset)%C(white)%s%C(reset) %C(reset)' --all
+
+  lg4 = log --graph --abbrev-commit --decorate --date=default --format=format:'%<(15) - %C(yellow)%h%C(reset) - %<(35)%C(blue)%an %C(auto)%d%C(reset) %s' --all
+
+  lg5 = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(blue)%h%C(reset)' --all
+
+  lg6 = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(blue)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cr)%C(reset) - %C(bold red)%an%C(reset)'
+
+  lg7 = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(yellow)%h%C(reset) %C(green)(%ci)%C(reset)%C(auto)%d%C(reset) %s'
+
+  lg7n = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(yellow)%h%C(reset) %C(green)(%ci) %<(26)%C(blue)%an %C(reset)%C(auto)%d%C(reset) %s'
+
+  ; lg = lg1 (no --all)
+  lg = log --graph --abbrev-commit --decorate --date=default --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+
+  ;lg = "!sh -c \"git log $1\" -"
+  ;lg = "!f() { git lg7 . }; f"
+  ;lg = "!f() { echo \"git lg7 $@\"; }; f"
+  ;lg = "!f() { echo \"git lg7 $@\" | cat; }; f"
+  ;lg = "!f() { sh -c \"git lg7 $@\"; }; f"
+  ;lg = "!f() { git lg7 $@; }; f"
+  ;lgn = !git lg7n "$@"
+
+  ;lgt = "!f() { echo \"git lg7 $@\" | sh; }; f"
+  lgt = "!f() { export; }; f"
+  ;lgt = "!f() { git lg7 $@; }; f"
+
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[init]
+	templatedir = /Users/thomas/.git/hooks
+[gitlab]
+	user = gielfeldt
+[github]
+	user = gielfeldt
