@@ -27,6 +27,7 @@ zstyle ':vcs_info:git:*' formats '%F{11}(%b) '
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PS1='%B%F{10}%n@%m%f%b:%B%F{12}%~ ${vcs_info_msg_0_}%f%b$ '
+PROMPT_EOL_MARK=$'%K{red}%F{white}↲%f%k'
 
 PATH=$PATH:~/bin
 
